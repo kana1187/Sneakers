@@ -1,0 +1,318 @@
+@charset "UTF-8";
+body {
+  background-color: #FFFFFF;
+  color: #121212;
+  font-family: "Hiragino Kaku Gothic ProN";
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 20px 40px;
+  background-color: #FFFFFF;
+  z-index: 10;
+}
+.header .header-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header .header-inner .logo {
+  cursor: pointer;
+}
+.header .header-inner .hamburger {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 23px;
+  margin: auto 0;
+  /* ハンバーガーをクリック後のスタイル*/
+}
+.header .header-inner .hamburger span {
+  display: block;
+  background-color: #121212;
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  transition: 0.5s;
+}
+.header .header-inner .hamburger span:nth-child(1) {
+  top: 0;
+}
+.header .header-inner .hamburger span:nth-child(2) {
+  top: 45%;
+}
+.header .header-inner .hamburger span:nth-child(3) {
+  bottom: 0;
+}
+.header .header-inner .hamburger.active span {
+  background-color: #FFFFFF;
+  z-index: 20;
+}
+.header .header-inner .hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(-315deg);
+}
+.header .header-inner .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.header .header-inner .hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(315deg);
+}
+
+#hamburger-navigation {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  width: 300px;
+  background-color: #121212;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #FFFFFF;
+  text-align: left;
+  font-weight: 300;
+  padding: 60px 25px;
+  z-index: 20;
+  opacity: 0;
+  transition: 0.5s;
+}
+#hamburger-navigation .navigation-sections {
+  margin-bottom: 65px;
+}
+#hamburger-navigation .navigation-sections li {
+  padding: 20px 0 20px;
+  border-top: 1px solid #FFFFFF;
+}
+#hamburger-navigation .navigation-sections li:last-child {
+  border-bottom: 1px solid #FFFFFF;
+}
+#hamburger-navigation .nav-sns li {
+  margin-bottom: 10px;
+}
+#hamburger-navigation.active {
+  left: 0;
+  opacity: 1;
+}
+
+#mask {
+  display: none;
+  transition: 0.5s;
+}
+#mask.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.8;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.video {
+  margin-top: 80px;
+  width: 100%;
+}
+.video .bg-video {
+  max-width: 100%;
+  max-height: 960px;
+}
+
+.pickup {
+  width: 100%;
+  padding-top: 100px;
+  overflow-x: hidden;
+}
+.pickup .pickup-swiper {
+  max-width: 100%;
+  height: 271px;
+  transition-timing-function: linear;
+  -webkit-scrollbar: none;
+}
+.pickup .pickup-swiper .swiper-wrapper .swiper-slide {
+  margin: 0 10px;
+}
+.pickup .pickup-swiper .swiper-wrapper img {
+  max-height: 271px;
+  width: 100%;
+}
+
+.feature {
+  padding: 100px 16px 60px;
+}
+.feature .feature-wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 27px;
+  row-gap: 26px;
+}
+
+.feature-item {
+  display: block;
+  box-shadow: 0 0 10px gray;
+}
+.feature-item .featureItem-img {
+  max-width: 100%;
+  transition: all 1s;
+  opacity: 0.5;
+  transform: translateY(10%);
+}
+.feature-item .featureItem-img.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.feature-item .featureItem-content {
+  padding: 30px;
+}
+.feature-item .featureItem-content .featureItem-category {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.feature-item .featureItem-content .featureItem-text {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.feature-item .featureItem-content .featureItem-date {
+  font-size: 12px;
+  text-align: end;
+}
+
+.contact {
+  padding: 50px 20px;
+  background-color: #121212;
+}
+.contact .section-title {
+  color: #FFFFFF;
+}
+.contact .contact-wrapper {
+  max-width: 1210px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.contact-text {
+  width: 45%;
+}
+.contact-text .text {
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  width: 45%;
+}
+.contact-form dl {
+  display: block;
+  cursor: default;
+}
+.contact-form dl dt {
+  font-size: 14px;
+  font-weight: 300;
+  cursor: default;
+}
+.contact-form dl dd {
+  width: 100%;
+  height: 44px;
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+}
+.contact-form dl dd:last-child {
+  width: 100%;
+  height: 68px;
+}
+.contact-form label {
+  cursor: default;
+}
+.contact-form input[type=text],
+.contact-form input[type=email] {
+  width: 100%;
+  height: 100%;
+  color: #121212;
+  outline: none;
+}
+.contact-form textarea {
+  width: 100%;
+  height: 100%;
+  color: #121212;
+  outline: none;
+  resize: none;
+}
+.contact-form .btn {
+  width: 200px;
+  padding: 12px 0;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+}
+.contact-form .btn:hover {
+  color: #121212;
+  background-color: #FFFFFF;
+}
+
+.footer {
+  background-color: #121212;
+  padding: 10px 0 7px 0;
+}
+.footer .footer-copy {
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+}
+
+/*レスポンシブ*/
+@media screen and (max-width: 600px) {
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .header {
+    padding: 20px 16px;
+  }
+  .bg-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  .feature {
+    padding-bottom: 90px;
+  }
+  .contact-wrapper {
+    flex-direction: column;
+  }
+  .contact-wrapper .contact-text {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .contact-wrapper .contact-form {
+    width: 100%;
+  }
+  .contact-wrapper .contact-form .btn {
+    width: 100%;
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */
